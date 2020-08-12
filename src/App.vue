@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <app-servers></app-servers>
-  </div>
+	<div>
+		<app-server></app-server>
+	</div>
 </template>
 
 <script>
-export default {};
+	export default {}
 </script>
 
 <style></style>
