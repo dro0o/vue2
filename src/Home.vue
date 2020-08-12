@@ -1,13 +1,14 @@
 <template>
 <div>
-    <app-server-status v-for="server in 5"></app-server-status>
+    <!-- <app-server-status v-for="server in 5" :key="server in 5"></app-server-status> -->
 </div>
 </template>
 <script>
-    import ServerStatus from './ServerStatus'
+    // Local component import where needed
+    // import ServerStatus from './ServerStatus'
     export default {
         components: {
-            'app-server-status': ServerStatus
+            // 'app-server-status': ServerStatus
         }
     }
 </script>
