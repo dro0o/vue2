@@ -1,14 +1,24 @@
 <template>
-<div>
+  <div>
     <!-- <app-server-status v-for="server in 5" :key="server in 5"></app-server-status> -->
-</div>
+    <app-server-header />
+    <hr />
+    <app-server-status />
+    <hr />
+    <app-server-footer />
+  </div>
 </template>
 <script>
-    // Local component import where needed
-    // import ServerStatus from './ServerStatus'
-    export default {
-        components: {
-            // 'app-server-status': ServerStatus
-        }
-    }
+// Local component import where needed
+import ServerHeader from "./Header";
+import ServerStatus from "./ServerStatus";
+import ServerFooter from "./Footer";
+
+export default {
+  components: {
+    "app-server-header": ServerHeader,
+    "app-server-status": ServerStatus,
+    "app-server-footer": ServerFooter
+  }
+};
 </script>
