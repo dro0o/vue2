@@ -6,10 +6,10 @@
 		<hr />
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<app-user-detail :name="name"></app-user-detail>
+				<app-user-detail :name="name" :resetFn="resetName" :userAge="age" @nameWasReset="name=$event"></app-user-detail>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<app-user-edit></app-user-edit>
+				<app-user-edit :userAge="age" @ageWasEdited="age=$event"></app-user-edit>
 			</div>
 		</div>
 	</div>
@@ -23,12 +23,16 @@
 		data: function () {
 			return {
 				name: "Andrew",
+				age: 29
 			}
 		},
 		methods: {
 			changeName() {
 				this.name = "Anna"
 			},
+			resetName() {
+				this.name = "Andrew"
+			}
 		},
 		components: {
 			appUserDetail: UserDetail,
