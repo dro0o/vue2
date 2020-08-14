@@ -1,5 +1,5 @@
 <template>
-	<li class="list-group-item" @click="showDetail">Server #{{ server.id }}</li>
+	<li class="list-group-item" @click="showDetail" style="cursor: pointer">Server #{{ server.id }}</li>
 </template>
 
 <script>

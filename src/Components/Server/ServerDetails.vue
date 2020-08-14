@@ -24,7 +24,7 @@
 		},
 		methods: {
 			resetStatus() {
-				eventBus.changeStatus(this.server.id)
+				this.server.status = 'Normal'
 			}
 		}
 	}
