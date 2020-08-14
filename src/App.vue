@@ -1,35 +1,32 @@
 <template>
 	<div class="container">
-		<app-header></app-header>
-		<hr />
 		<div class="row">
-			<servers></servers>
-			<app-server-details></app-server-details>
+			<div class="col-xs-12">
+				<app-quote>
+					<h2 slot="title">{{quoteTitle}}</h2>
+					<p>A wonderful quote</p>
+				</app-quote>
+			</div>
 		</div>
-		<hr />
-		<app-footer></app-footer>
 	</div>
 </template>
 
 <script>
-	import Header from './Components/Shared/Header.vue'
-	import Footer from './Components/Shared/Footer.vue'
-	import Servers from './Components/Server/Servers.vue'
-	import ServerDetails from './Components/Server/ServerDetails.vue'
-
+	import Quote from './components/Quote'
 	export default {
 		components: {
-			appHeader: Header,
-			Servers,
-			'app-server-details': ServerDetails,
-			'app-footer': Footer
+			appQuote: Quote
+		},
+		data() {
+			return {
+				quoteTitle: 'The Quote'
+			}
 		}
 	}
 </script>
 
 <style>
-	div.component {
-		border: 1px solid black;
-		padding: 30px;
+	h2 {
+		color: red;
 	}
 </style>
