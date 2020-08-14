@@ -6,6 +6,12 @@ export const eventBus = new Vue({
     changeAge(age) {
       this.$emit("ageWasEdited", age)
     },
+    changeDetails(server) {
+      this.$emit("serverDetailChange", server)
+    },
+    changeStatus(id) {
+      this.$emit("serverStatusChange", id)
+    },
   },
 })
 
