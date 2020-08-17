@@ -53,7 +53,7 @@
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
 					<label for="priority">Priority</label>
 					<select id="priority" class="form-control">
-						<option></option>
+						<option v-for="priority in priorities" :selected="priority == 'Medium'">{{ priority }}</option>
 					</select>
 				</div>
 			</div>
@@ -103,7 +103,8 @@
 				},
 				message: 'A new text',
 				sendMail: [],
-				gender: 'Male'
+				gender: 'Male',
+				priorities: ['High', 'Medium', 'Low']
 			}
 		}
 	}
