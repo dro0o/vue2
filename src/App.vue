@@ -7,7 +7,13 @@
 					<hr />
 					<div class="form-group">
 						<label for="email">Mail</label>
-						<input type="text" id="email" class="form-control" v-model="userData.email" />
+						<input
+							type="text"
+							id="email"
+							class="form-control"
+							:value="userData.email"
+							@input="userData.email = $event.target.value"
+						/>
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
@@ -53,7 +59,7 @@
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
 					<label for="priority">Priority</label>
 					<select id="priority" class="form-control" v-model="selectedPriority">
-						<option v-for="priority in priorities" :selected="priority == 'Medium'">{{ priority }}</option>
+						<option v-for="priority in priorities">{{ priority }}</option>
 					</select>
 				</div>
 			</div>
@@ -83,7 +89,7 @@
 							<li v-for="item in sendMail">{{ item }}</li>
 						</ul>
 						<p>Gender: {{gender}}</p>
-						<p>Priority:</p>
+						<p>Priority: {{selectedPriority}}</p>
 						<p>Switched:</p>
 					</div>
 				</div>
