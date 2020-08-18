@@ -15,6 +15,15 @@
 				>Color this, locally!</p>
 			</div>
 		</div>
+		<hr />
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				<h1>Directives Exercise</h1>
+				<!-- Exercise -->
+				<!-- Build a Custom Directive which works like v-on (Listen for Events) -->
+				<button v-myon:click="testFunc" class="btn btn-primary">Run testFunc!</button>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -53,6 +62,21 @@
 						}, delay)
 					}
 				}
+			},
+			'myon': {
+				bind(el, binding, vnode) {
+					// el.onclick = () => {
+					// 	binding.value()
+					// }
+					const type = binding.arg
+					const fn = binding.value
+					el.addEventListener(type, fn)
+				}
+			}
+		},
+		methods: {
+			testFunc() {
+				alert('you have run testFunc!')
 			}
 		}
 	}
