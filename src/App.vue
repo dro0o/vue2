@@ -22,6 +22,12 @@
 				<!-- Exercise -->
 				<!-- Build a Custom Directive which works like v-on (Listen for Events) -->
 				<button v-myon:click="testFunc" class="btn btn-primary">Run testFunc!</button>
+				<hr />
+				<div
+					style="width: 100px; height: 100px; background-color: lightgreen"
+					v-myon:mouseenter="mouseEnter"
+					v-myon:mouseleave="mouseLeave"
+				></div>
 			</div>
 		</div>
 	</div>
@@ -77,6 +83,12 @@
 		methods: {
 			testFunc() {
 				alert('you have run testFunc!')
+			},
+			mouseEnter() {
+				console.log('mouse entered!')
+			},
+			mouseLeave() {
+				console.log('mouse leave!')
 			}
 		}
 	}
