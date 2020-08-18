@@ -11,7 +11,15 @@
 					<div class="alert alert-info" v-show="show">This is some info</div>
 				</transition>
 				<br />
-				<transition name="slide" type="animation">
+				<transition appear name="slide" type="animation">
+					<div class="alert alert-info" v-if="show">This is some info</div>
+				</transition>
+				<br />
+				<transition
+					appear
+					enter-active-class="animate__animated animate__bounce"
+					leave-active-class="animate__animated animate__shakeX"
+				>
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
 			</div>
@@ -23,7 +31,7 @@
 	export default {
 		data() {
 			return {
-				show: false
+				show: true
 			}
 		}
 	}
