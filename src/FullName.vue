@@ -14,11 +14,6 @@
 
 <script>
 	export default {
-		props: ['value'],
-		methods: {
-			sendName() {
-				this.$emit('input', value)
-			}
-		}
+		props: ['value']
 	}
 </script>
