@@ -5,8 +5,7 @@ Vue.filter("to-lowercase", (value) => {
   return value.toLowerCase()
 })
 Vue.filter("countChars", (value) => {
-  var charLen = value.split("").length
-  return value + " (" + charLen + ")"
+  return value + " (" + value.length + ")"
 })
 
 Vue.mixin({
