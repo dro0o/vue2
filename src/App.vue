@@ -13,6 +13,8 @@
         </div>
         <button class="btn btn-primary" @click="submit">Submit</button>
         <hr />
+        <input type="text" class="form-control" v-model="node" />
+        <br /><br />
         <button class="btn btn-primary" @click="fetchData">Get Data</button>
         <br /><br />
         <ul class="list-group">
@@ -35,6 +37,7 @@ export default {
       },
       users: [],
       resource: {},
+      node: "data",
     }
   },
   methods: {
@@ -48,11 +51,23 @@ export default {
       //     console.log(error)
       //   }
       // )
-      this.resource.save({}, this.user)
+      this.resource.saveAlt(this.user)
     },
     fetchData() {
-      this.$http
-        .get("data.json")
+      // this.$http
+      //   .get("data.json")
+      //   .then((response) => {
+      //     return response.json()
+      //   })
+      //   .then((data) => {
+      //     const resultArray = []
+      //     for (let key in data) {
+      //       resultArray.push(data[key])
+      //     }
+      //     this.users = resultArray
+      //   })
+      this.resource
+        .getData({ node: this.node })
         .then((response) => {
           return response.json()
         })
@@ -66,7 +81,11 @@ export default {
     },
   },
   created() {
-    this.resource = this.$resource("data.json")
+    const customActions = {
+      saveAlt: { method: "POST", url: "alternative.json" },
+      getData: { method: "GET" },
+    }
+    this.resource = this.$resource("{node}.json", {}, customActions)
   },
 }
 </script>
