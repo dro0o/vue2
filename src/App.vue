@@ -39,20 +39,18 @@ export default {
   methods: {
     submit() {
       // use the link provided by firebase, 'data' is a arbitrary name for a node, .json for all FB reqs
-      this.$http
-        .post("https://vuejs-http-e994d.firebaseio.com/data.json", this.user)
-        .then(
-          (response) => {
-            console.log(response)
-          },
-          (error) => {
-            console.log(error)
-          }
-        )
+      this.$http.post("", this.user).then(
+        (response) => {
+          console.log(response)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
     },
     fetchData() {
       this.$http
-        .get("https://vuejs-http-e994d.firebaseio.com/data.json")
+        .get("")
         .then((response) => {
           return response.json()
         })
