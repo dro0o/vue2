@@ -1,18 +1,8 @@
 import Vue from "vue"
+import VueResource from "vue-resource"
 import App from "./App.vue"
 
-Vue.filter("to-lowercase", (value) => {
-  return value.toLowerCase()
-})
-Vue.filter("countChars", (value) => {
-  return value + " (" + value.length + ")"
-})
-
-Vue.mixin({
-  created() {
-    console.log("global mixin created, created hook")
-  },
-})
+Vue.use(VueResource)
 
 new Vue({
   el: "#app",
