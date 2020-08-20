@@ -5,7 +5,7 @@ import UserEdit from "./components/user/UserEdit.vue"
 import UserDetail from "./components/user/UserDetail.vue"
 
 export const routes = [
-  { path: "/", component: Home },
+  { path: "/", component: Home, name: "home" },
   {
     path: "/user",
     component: User,
