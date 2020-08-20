@@ -10,7 +10,7 @@
         <hr />
         <app-another-counter></app-another-counter>
         <hr />
-        <input type="text" v-model="value" />
+        <input type="text" :value="value" @input="updateValue" />
         <p>{{ value }}</p>
       </div>
     </div>
@@ -27,6 +27,11 @@ export default {
   computed: {
     value() {
       return this.$store.getters.value
+    },
+  },
+  methods: {
+    updateValue(event) {
+      this.$store.dispatch("updateValue", event.target.value)
     },
   },
   components: {
