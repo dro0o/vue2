@@ -22,6 +22,16 @@
 					hash: '#data'
 				}
 			}
+		},
+		// You can't access data in this method
+		beforeRouteEnter(to, from, next) {
+			if (true) { // check if user is authed
+				next()
+			}
+		},
+		beforeRouteLeave(to, from, next) {
+			// ...
+			next()
 		}
 	}
 </script>
